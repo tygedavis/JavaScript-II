@@ -89,7 +89,25 @@ console.log("This is how much money was donated.", ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//The event director wants to thank the business's for their donations. Make a list of the business and the amount that they donated.
+const money = runners.map(function(currentValue){
+  return (`${currentValue.company_name},  $${currentValue.donation}`)
+});
+console.log("This is all of the business' and the money they donated.", money)
 
 // Problem 2
+//The companies that donated more than $200 are 'VIP' and will be recognized at the race. Make a list of all of the 'VIP' companies
+const vip = runners.filter(function(currentValue){
+  return currentValue.donation >= 200;
+});
+console.log("These are the VIP companies.", vip)
 
 // Problem 3
+//When the race is over, the event directors would like to send an email to the racers thanking them for their contributions. Make a new array called emailList with the first names and emails of all of the racers.
+emailList = [];
+
+runners.forEach(function(listItems){
+  return emailList.push(`Name: ${listItems.first_name} - Email: ${listItems.email}`)
+})
+
+console.log("This is the email list:", emailList)
