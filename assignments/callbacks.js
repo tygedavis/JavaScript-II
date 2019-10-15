@@ -74,9 +74,14 @@ console.log("This is the multiply function", multiplyNums(5, 2, multiply));
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  items.includes(item, list);
+  return cb(list, item);
 }
-//console.log("This is the contains function", contains(item));
+
+const checker = function(array, list){
+  return array.includes(list);
+}
+
+console.log("This is the contains the checker", contains('Pencil', items, checker));
 
 /* STRETCH PROBLEM */
 
