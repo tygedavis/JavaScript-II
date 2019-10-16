@@ -3,6 +3,20 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+function animals(animalName){
+  const fish1 = 'salmon'
+  const fish2 = 'Sharks'
+  console.log(`A ${animalName} is a super cool animal.`);
+    function food(mammal){
+      console.log(`A ${mammal} like to eat a lot of ${fish1}`)
+        function disaster(object){
+            console.log(`${fish2} are commonly found in ${object}`);
+        }//this closes tornado
+        disaster('tornados')
+    }//this closes food
+    food('Bear')
+}//this closes animals
+animals('Whale')
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
